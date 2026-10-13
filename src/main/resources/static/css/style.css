@@ -1,0 +1,124 @@
+/* Theme */
+:root {
+    color-scheme: light dark;
+
+    --surface: #ffffff;
+    --surface-container: #f4f4f5;
+
+    --border: #e4e4e7;
+
+    --text: #09090b;
+    --subtext: #71717a;
+
+    --accent: #15803d;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        color-scheme: dark;
+
+        --surface: #09090b;
+        --surface-container: #121215;
+
+        --border: #27272a;
+
+        --text: #f4f4f5;
+        --subtext: #a1a1aa;
+
+        --accent: #22c55e;
+    }
+}
+
+[data-theme="light"] {
+    color-scheme: light;
+
+    --surface: #ffffff;
+    --surface-container: #f4f4f5;
+
+    --border: #e4e4e7;
+
+    --text: #09090b;
+    --subtext: #71717a;
+
+    --accent: #15803d;
+}
+
+[data-theme="dark"] {
+    color-scheme: dark;
+
+    --surface: #09090b;
+    --surface-container: #121215;
+
+    --border: #27272a;
+
+    --text: #f4f4f5;
+    --subtext: #a1a1aa;
+
+    --accent: #22c55e;
+}
+
+/* Fonts */
+@font-face {
+    font-family: "JetBrains Mono";
+    font-style: normal;
+    font-weight: 100 800;
+    font-display: swap;
+    src:
+        url("../fonts/JetBrainsMono-VariableFont_wght.ttf")
+            format("truetype-variations"),
+        url("../fonts/JetBrainsMono-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "JetBrains Mono";
+    font-style: italic;
+    font-weight: 100 800;
+    font-display: swap;
+    src:
+        url("../fonts/JetBrainsMono-Italic-VariableFont_wght.ttf")
+            format("truetype-variations"),
+        url("../fonts/JetBrainsMono-Italic-VariableFont_wght.ttf")
+            format("truetype");
+}
+
+@font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 100 800;
+    font-display: swap;
+    src:
+        url("../fonts/Inter-VariableFont_opsz,wght.ttf")
+            format("truetype-variations"),
+        url("../fonts/Inter-VariableFont_opsz,wght.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Inter";
+    font-style: italic;
+    font-weight: 100 800;
+    font-display: swap;
+    src:
+        url("../fonts/Inter-Italic-VariableFont_opsz,wght.ttf")
+            format("truetype-variations"),
+        url("../fonts/Inter-Italic-VariableFont_opsz,wght.ttf")
+            format("truetype");
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    color: var(--text);
+    font-family:
+        "JetBrains Mono", "Inter", "Font Awesome 6 Free", monospace, sans-serif;
+    font-optical-sizing: auto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: normal;
+}
