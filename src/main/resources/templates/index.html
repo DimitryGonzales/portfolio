@@ -16,7 +16,7 @@
     </head>
     <body>
         <!-- Inputs -->
-        <input type="checkbox" id="menu-toggle" />
+        <input type="checkbox" class="menu-toggle" id="menu-toggle" />
 
         <main>
             <!-- Hero -->
@@ -132,6 +132,97 @@
                         <i class="fa-solid fa-gear"></i>
                         <i class="fa-solid fa-xmark"></i>
                     </label>
+
+                    <div class="menu">
+                        <section class="menu-section">
+                            <h3 class="menu-section-title">Theme</h3>
+
+                            <ul class="menu-section-option-wrapper">
+                                <li>
+                                    <input
+                                        type="radio"
+                                        name="theme-toggle"
+                                        class="menu-section-option-toggle"
+                                        id="theme-auto"
+                                        checked
+                                    />
+
+                                    <label
+                                        for="theme-auto"
+                                        class="menu-section-option"
+                                        >Auto</label
+                                    >
+                                </li>
+
+                                <li>
+                                    <input
+                                        type="radio"
+                                        name="theme-toggle"
+                                        class="menu-section-option-toggle"
+                                        id="theme-light"
+                                    />
+
+                                    <label
+                                        for="theme-light"
+                                        class="menu-section-option"
+                                        >Light</label
+                                    >
+                                </li>
+
+                                <li>
+                                    <input
+                                        type="radio"
+                                        name="theme-toggle"
+                                        class="menu-section-option-toggle"
+                                        id="theme-dark"
+                                    />
+
+                                    <label
+                                        for="theme-dark"
+                                        class="menu-section-option"
+                                        >Dark</label
+                                    >
+                                </li>
+                            </ul>
+                        </section>
+
+                        <section class="menu-section">
+                            <h3 class="menu-section-title">Language</h3>
+
+                            <ul class="menu-section-option-wrapper">
+                                <li>
+                                    <input
+                                        type="radio"
+                                        name="language-toggle"
+                                        class="menu-section-option-toggle"
+                                        id="language-english"
+                                        checked
+                                    />
+
+                                    <label
+                                        for="language-english"
+                                        class="menu-section-option"
+                                        >English</label
+                                    >
+                                </li>
+
+                                <li>
+                                    <input
+                                        type="radio"
+                                        name="language-toggle"
+                                        class="menu-section-option-toggle"
+                                        id="language-portuguese"
+                                    />
+
+                                    <label
+                                        for="language-portuguese"
+                                        class="menu-section-option"
+                                        >Portuguese</label
+                                    >
+                                </li>
+                            </ul>
+                        </section>
+                    </div>
                 </div>
             </header>
 
