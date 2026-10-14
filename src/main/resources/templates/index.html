@@ -10,28 +10,43 @@
 
         <!-- CSS -->
         <link rel="stylesheet" th:href="@{/css/style.css}" />
+
+        <!-- Scripts -->
+        <script th:src="@{/js/sectionIndicator.js}" defer></script>
     </head>
     <body>
+        <!-- Inputs -->
+        <input type="checkbox" id="menu-toggle" />
+
         <main>
             <!-- Hero -->
-            <section class="hero-wrapper">
+            <section class="hero-wrapper" id="hero">
                 <div class="hero">
                     <a
                         href="https://github.com/DimitryGonzales"
                         class="hero-info"
                         target="_blank"
                     >
-                        <img
-                            src="https://avatars.githubusercontent.com/u/125162224?v=4"
-                            alt="GitHub Avatar"
-                            class="hero-avatar"
-                        />
+                        <div class="hero-avatar">
+                            <img
+                                src="https://avatars.githubusercontent.com/u/125162224?v=4"
+                                alt="GitHub Avatar"
+                            />
+
+                            <i class="fa-brands fa-github"></i>
+                        </div>
 
                         <div class="hero-title">
-                            <h1 class="hero-name">Dimitry Gonzales</h1>
+                            <h1 class="hero-name">
+                                Dimitry Gonzales
+
+                                <i
+                                    class="fa-solid fa-arrow-up-right-from-square"
+                                ></i>
+                            </h1>
 
                             <p class="hero-description subtext">
-                                Software engineering student.
+                                Software engineering student
                             </p>
                         </div>
                     </a>
@@ -41,18 +56,96 @@
                     </div>
                 </div>
 
-                <a href="" class="scroll-indicator subtext">
+                <a href="#about-me" class="scroll-indicator subtext">
                     <p>Scroll down</p>
 
-                    <i
-                        class="fa-solid fa-computer-mouse scroll-indicator-icon-mouse"
-                    ></i>
+                    <i class="fa-solid fa-computer-mouse"></i>
 
-                    <i
-                        class="fa-solid fa-hand-pointer scroll-indicator-icon-hand"
-                    ></i>
+                    <i class="fa-solid fa-hand-pointer"></i>
                 </a>
             </section>
+
+            <!-- Topbar -->
+            <header class="topbar">
+                <nav class="topbar-link-wrapper">
+                    <ul>
+                        <li>
+                            <a href="#" class="topbar-link" id="hero-indicator">
+                                <i class="fa-solid fa-house"></i>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                href="#about-me"
+                                class="topbar-link"
+                                id="about-me-indicator"
+                                >About me</a
+                            >
+                        </li>
+
+                        <li>
+                            <a
+                                href="#projects"
+                                class="topbar-link"
+                                id="projects-indicator"
+                                >Projects</a
+                            >
+                        </li>
+
+                        <li>
+                            <a
+                                href="#experiences"
+                                class="topbar-link"
+                                id="experiences-indicator"
+                                >Experiences</a
+                            >
+                        </li>
+
+                        <li>
+                            <a
+                                href="#contact-me"
+                                class="topbar-link"
+                                id="contact-me-indicator"
+                                >Contact me</a
+                            >
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="topbar-tools">
+                    <div class="topbar-quick-access-wrapper">
+                        <a
+                            href="https://github.com/DimitryGonzales"
+                            target="_blank"
+                            class="topbar-quick-access"
+                        >
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+
+                        <label for="" class="topbar-quick-access">
+                            <i class="fa-solid fa-file-lines"></i>
+                        </label>
+                    </div>
+
+                    <label for="menu-toggle" class="menu-toggle-label">
+                        <i class="fa-solid fa-gear"></i>
+                        <i class="fa-solid fa-xmark"></i>
+                    </label>
+                </div>
+            </header>
+
+            <!-- About me -->
+            <section id="about-me"></section>
+
+            <!-- Projects -->
+            <section id="projects"></section>
+
+            <!-- Projects -->
+            <section id="experiences"></section>
+
+            <!-- Contact me -->
+            <section id="contact-me"></section>
         </main>
     </body>
 </html>

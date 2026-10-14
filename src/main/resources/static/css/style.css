@@ -1,5 +1,5 @@
-/* Themes */
 :root {
+    /* Theme */
     color-scheme: light dark;
 
     --surface: #ffffff;
@@ -12,8 +12,12 @@
 
     --accent: #15803d;
     --accent-text: #ffffff;
+
+    /* Values */
+    --topbar-height: 50px;
 }
 
+/* Themes */
 @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
         color-scheme: dark;
@@ -116,6 +120,8 @@
 
     margin: 0;
     padding: 0;
+
+    scrollbar-color: var(--accent) transparent;
 }
 
 html {
@@ -126,12 +132,18 @@ html {
     font-size: 16px;
     font-style: normal;
     font-weight: normal;
+
+    scroll-behavior: smooth;
 }
 
 ::selection {
     background-color: var(--accent);
 
     color: var(--accent-text);
+}
+
+input[type="checkbox"] {
+    display: none;
 }
 
 a {
@@ -149,7 +161,12 @@ a {
 }
 
 main {
-    width: 100dvw;
+    height: 300dvh;
+    width: 100%;
+}
+
+main > section:not(:nth-of-type(1)) {
+    scroll-margin-top: var(--topbar-height);
 }
 
 /* Hero */
@@ -202,9 +219,17 @@ main {
 }
 
 .hero-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     border-radius: 100%;
     border: 1px solid var(--border);
     box-shadow: 0 0 0 0 var(--accent);
+
+    position: relative;
+
+    overflow: hidden;
 
     max-width: 250px;
     width: 100%;
@@ -217,6 +242,28 @@ main {
     box-shadow: 0 0 0 2px var(--accent);
 }
 
+.hero-avatar img {
+    height: 100%;
+    width: 100%;
+}
+
+.hero-avatar i {
+    opacity: 0;
+
+    color: var(--accent);
+    font-size: 4rem;
+
+    pointer-events: none;
+
+    position: absolute;
+
+    transition: opacity 200ms ease;
+}
+
+.hero-info:hover .hero-avatar i {
+    opacity: 1;
+}
+
 .hero-title {
     display: flex;
     flex-direction: column;
@@ -224,6 +271,9 @@ main {
 }
 
 .hero-name {
+    display: flex;
+    align-items: center;
+
     background-image: linear-gradient(var(--accent), var(--accent));
     background-position: 0% 100%;
     background-repeat: no-repeat;
@@ -233,11 +283,29 @@ main {
     font-weight: bold;
     text-align: center;
 
+    position: relative;
+
     transition: background 200ms ease;
 }
 
 .hero-info:hover .hero-name {
     background-size: 100% 2px;
+}
+
+.hero-name i {
+    opacity: 0;
+
+    color: var(--accent);
+    font-size: 1rem;
+
+    position: absolute;
+    left: calc(100% + 8px);
+
+    transition: opacity 200ms ease;
+}
+
+.hero-info:hover .hero-name i {
+    opacity: 1;
 }
 
 .hero-description {
@@ -354,14 +422,178 @@ main {
     }
 }
 
-.scroll-indicator-icon-mouse {
+.scroll-indicator i:nth-of-type(1) {
     animation: 2s ease slide-down-teleport-up infinite;
 }
 
-.scroll-indicator-icon-hand {
+.scroll-indicator i:nth-of-type(2) {
     display: none;
 
     animation: 2s ease slide-up-teleport-down infinite;
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: color-mix(
+        in srgb,
+        var(--surface-container) 20%,
+        transparent
+    );
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(8px);
+
+    position: sticky;
+    top: 0;
+
+    padding: 0 32px;
+
+    height: 50px;
+    width: 100%;
+
+    transition: background 200ms ease;
+}
+
+.topbar:hover {
+    background-color: var(--surface-container);
+}
+
+.topbar-link-wrapper {
+    display: flex;
+
+    border-right: 1px solid var(--border);
+    border-left: 1px solid var(--border);
+}
+
+.topbar-link-wrapper,
+.topbar-link-wrapper ul,
+.topbar-link-wrapper li {
+    display: flex;
+
+    list-style: none;
+
+    height: 100%;
+}
+
+.topbar-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-image: linear-gradient(var(--accent), var(--accent));
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+
+    color: var(--text);
+
+    padding: 0 16px;
+
+    height: 100%;
+
+    transition: background 200ms ease;
+}
+
+.topbar-link-wrapper:hover .topbar-link {
+    background-size: 0% 2px;
+}
+
+.topbar-link:hover,
+.topbar-link-wrapper:hover .topbar-link:hover,
+.topbar-link.topbar-link-active {
+    background-size: 100% 2px;
+}
+
+.topbar-link.topbar-link-active {
+    color: var(--accent);
+}
+
+.topbar-tools {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    height: 100%;
+}
+
+.toolbar-quick-access-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.topbar-quick-access {
+    color: var(--subtext);
+
+    cursor: pointer;
+
+    transition: color 200ms ease;
+}
+
+.topbar-quick-access:hover {
+    color: var(--accent);
+}
+
+.menu-toggle-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-image: linear-gradient(var(--accent), var(--accent));
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    border-right: 1px solid var(--border);
+    border-left: 1px solid var(--border);
+
+    cursor: pointer;
+
+    position: relative;
+
+    height: 100%;
+    aspect-ratio: 1/1;
+
+    transition: background 200ms ease;
+}
+
+body:has(#menu-toggle:checked) .menu-toggle-label {
+    background-size: 100% 100%;
+}
+
+.menu-toggle-label i {
+    position: absolute;
+
+    transition:
+        opacity 200ms ease,
+        color 200ms ease,
+        transform 200ms ease;
+}
+
+.menu-toggle-label:hover i {
+    color: var(--accent);
+}
+
+body:has(#menu-toggle:checked) .menu-toggle-label i {
+    color: var(--accent-text);
+}
+
+.menu-toggle-label i:nth-of-type(2) {
+    opacity: 0;
+
+    transform: rotate(-90deg);
+}
+
+body:has(#menu-toggle:checked) .menu-toggle-label i:nth-of-type(1) {
+    opacity: 0;
+
+    transform: rotate(90deg);
+}
+
+body:has(#menu-toggle:checked) .menu-toggle-label i:nth-of-type(2) {
+    opacity: 1;
+
+    transform: rotate(0);
 }
 
 /* Media queries */
@@ -396,11 +628,11 @@ main {
         flex-direction: column-reverse;
     }
 
-    .scroll-indicator-icon-mouse {
+    .scroll-indicator i:nth-of-type(1) {
         display: none;
     }
 
-    .scroll-indicator-icon-hand {
+    .scroll-indicator i:nth-of-type(2) {
         display: inline;
     }
 }
