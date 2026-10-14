@@ -13,6 +13,7 @@
 
         <!-- Scripts -->
         <script th:src="@{/js/sectionIndicator.js}" defer></script>
+        <script th:src="@{/js/theme.js}" defer></script>
     </head>
     <body>
         <!-- Inputs -->
@@ -52,7 +53,7 @@
                     </a>
 
                     <div class="hero-button-wrapper">
-                        <a href="" class="hero-button">Button</a>
+                        <a href="" class="hero-button">Portfolio</a>
                     </div>
                 </div>
 
@@ -142,6 +143,7 @@
                                     <input
                                         type="radio"
                                         name="theme-toggle"
+                                        value="auto"
                                         class="menu-section-option-toggle"
                                         id="theme-auto"
                                         checked
@@ -158,6 +160,7 @@
                                     <input
                                         type="radio"
                                         name="theme-toggle"
+                                        value="light"
                                         class="menu-section-option-toggle"
                                         id="theme-light"
                                     />
@@ -173,6 +176,7 @@
                                     <input
                                         type="radio"
                                         name="theme-toggle"
+                                        value="dark"
                                         class="menu-section-option-toggle"
                                         id="theme-dark"
                                     />
