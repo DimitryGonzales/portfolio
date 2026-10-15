@@ -337,20 +337,21 @@ main {
     width: 100%;
 }
 
-.hero-avatar i {
+.hero-avatar::after {
+    content: "\f09b";
+
     opacity: 0;
 
     color: var(--accent);
+    font-family: "Font Awesome 7 Brands";
     font-size: 4rem;
-
-    pointer-events: none;
 
     position: absolute;
 
     transition: opacity 200ms ease;
 }
 
-.hero-info:hover .hero-avatar i {
+.hero-info:hover .hero-avatar::after {
     opacity: 1;
 }
 
@@ -382,11 +383,15 @@ main {
     background-size: 100% 2px;
 }
 
-.hero-name i {
+.hero-name::after {
+    content: "\f14d";
+
     opacity: 0;
 
     color: var(--accent);
-    font-size: 1rem;
+    font-family: "Font Awesome 7 Free";
+    font-size: 1.5rem;
+    font-weight: 900;
 
     position: absolute;
     left: calc(100% + 8px);
@@ -394,7 +399,7 @@ main {
     transition: opacity 200ms ease;
 }
 
-.hero-info:hover .hero-name i {
+.hero-info:hover .hero-name::after {
     opacity: 1;
 }
 
