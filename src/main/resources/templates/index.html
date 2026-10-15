@@ -12,8 +12,9 @@
         <link rel="stylesheet" th:href="@{/css/style.css}" />
 
         <!-- Scripts -->
-        <script th:src="@{/js/sectionIndicator.js}" defer></script>
         <script th:src="@{/js/theme.js}" defer></script>
+        <script th:src="@{/js/sectionIndicator.js}" defer></script>
+        <script th:src="@{/js/contact.js}" defer></script>
     </head>
     <body>
         <!-- Curriculum -->
@@ -67,7 +68,7 @@
                     </div>
                 </div>
 
-                <a href="#about-me" class="scroll-indicator">
+                <a href="#info" class="scroll-indicator">
                     <p>Scroll down</p>
 
                     <i class="fa-solid fa-computer-mouse"></i>
@@ -89,10 +90,10 @@
 
                         <li>
                             <a
-                                href="#about-me"
+                                href="#info"
                                 class="topbar-link"
-                                id="about-me-indicator"
-                                >About me</a
+                                id="info-indicator"
+                                >Info</a
                             >
                         </li>
 
@@ -257,6 +258,10 @@
                         About me
                     </h2>
                 </div>
+
+                <div class="grid-section-content-wrapper">
+                    <div class="grid-section-content"></div>
+                </div>
             </section>
 
             <!-- Projects -->
@@ -361,9 +366,50 @@
             <!-- Contact me -->
             <section class="grid-section" id="contact-me">
                 <div class="grid-section-content-wrapper">
-                    <h2 class="grid-section-content grid-section-title">
-                        Contact me
-                    </h2>
+                    <div class="grid-section-content">
+                        <div class="grid-section-content-wrapper">
+                            <h2 class="grid-section-content grid-section-title">
+                                Contact me
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-section-content-wrapper">
+                    <div class="grid-section-content">
+                        <div class="grid-section-content-wrapper">
+                            <form
+                                class="grid-section-content contact-me"
+                                name="contact-me"
+                                id="contact-form"
+                                method="post"
+                                action="/contact"
+                            >
+                                <h3 class="contact-me-title">Name</h3>
+
+                                <input
+                                    type="text"
+                                    name="name"
+                                    class="contact-me-name"
+                                    maxlength="100"
+                                    required
+                                />
+
+                                <h3 class="contact-me-title">Message</h3>
+
+                                <textarea
+                                    name="message"
+                                    class="contact-me-message"
+                                    maxlength="2000"
+                                    required
+                                ></textarea>
+
+                                <button class="contact-me-button" type="submit">
+                                    Send
+                                </button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>

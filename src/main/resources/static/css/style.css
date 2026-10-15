@@ -816,6 +816,10 @@ main > section:not(:nth-of-type(1)) {
     width: 100%;
 }
 
+.grid-section-content-wrapper .grid-section-content-wrapper {
+    border-bottom: none;
+}
+
 .grid-section-content {
     border-right: 1px solid var(--border);
     border-left: 1px solid var(--border);
@@ -888,16 +892,14 @@ main > section:not(:nth-of-type(1)) {
 }
 
 .project {
-    --projects-per-row: 3;
+    --per-row: 3;
 
     display: flex;
     flex-direction: column;
 
     background-color: var(--surface);
 
-    width: calc(
-        (100% - (1px * (var(--projects-per-row) - 1))) / var(--projects-per-row)
-    );
+    width: calc((100% - (1px * (var(--per-row) - 1))) / var(--per-row));
 }
 
 .project-image {
@@ -990,10 +992,92 @@ main > section:not(:nth-of-type(1)) {
     font-size: 0.9rem;
 }
 
+/* Contact */
+.contact-me > *:not(:last-child) {
+    border-bottom: 1px solid var(--border);
+}
+
+.contact-me-title {
+    background-color: var(--surface-container);
+
+    font-size: 1rem;
+    font-weight: bold;
+
+    padding: 16px 32px;
+
+    width: 100%;
+}
+
+.contact-me-name {
+    all: unset;
+
+    display: flex;
+    box-sizing: border-box;
+
+    padding: 16px 32px;
+
+    width: 100%;
+}
+
+.contact-me-message {
+    all: unset;
+
+    display: flex;
+    box-sizing: border-box;
+
+    font-family: "Inter";
+
+    padding: 32px;
+
+    height: 200px;
+    width: 100%;
+    resize: none;
+}
+
+.contact-me-button {
+    all: unset;
+
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+
+    background-image: linear-gradient(var(--accent), var(--accent));
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+
+    cursor: pointer;
+
+    padding: 16px 32px;
+
+    width: 100%;
+
+    transition:
+        background 200ms ease,
+        color 200ms ease;
+}
+
+.contact-me-button:hover {
+    background-size: 100% 100%;
+
+    color: var(--accent-text);
+}
+
+.contact-me-status {
+    background-color: var(--surface-container-high);
+    border: none;
+
+    font-weight: bold;
+
+    padding: 16px 32px;
+
+    width: 100%;
+}
+
 /* Media queries */
 @media (width <= 1536px) {
     .project {
-        --projects-per-row: 2;
+        --per-row: 2;
     }
 }
 
@@ -1103,6 +1187,14 @@ main > section:not(:nth-of-type(1)) {
         bottom: calc(var(--topbar-height) + 8px + 50px);
 
         transform-origin: bottom center;
+    }
+
+    .grid-section-content-wrapper .grid-section-content-wrapper {
+        padding: 0;
+    }
+
+    .grid-section-content .grid-section-content {
+        border: 0;
     }
 
     .grid-section-title {
