@@ -269,18 +269,25 @@
 
                 <div class="grid-section-content-wrapper">
                     <div class="grid-section-content project-wrapper">
-                        <a href="#projects" class="project">
+                        <a
+                            th:each="repo : ${repos}"
+                            th:href="${repo.htmlUrl}"
+                            target="_blank"
+                            class="project"
+                        >
                             <img
-                                src="https://picsum.photos/1920/1080"
-                                alt=""
+                                th:src="${repo.imageUrl}"
+                                th:alt="${repo.name}"
+                                loading="lazy"
                                 class="project-image"
                             />
 
                             <div class="project-info">
                                 <div class="project-info-data">
-                                    <h3 class="project-info-data-title">
-                                        Lorem, ipsum dolor.
-                                    </h3>
+                                    <h3
+                                        th:text="${repo.name}"
+                                        class="project-info-data-title"
+                                    ></h3>
 
                                     <div class="project-info-data-stat-wrapper">
                                         <p class="project-info-data-stat">
@@ -289,18 +296,18 @@
                                             ></i>
 
                                             <span
+                                                th:text="${repo.timeAgo}"
                                                 class="project-info-data-stat-value"
-                                                >5h</span
-                                            >
+                                            ></span>
                                         </p>
 
                                         <p class="project-info-data-stat">
-                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-code"></i>
 
                                             <span
+                                                th:text="${repo.language} ?: 'No language'"
                                                 class="project-info-data-stat-value"
-                                                >5</span
-                                            >
+                                            ></span>
                                         </p>
 
                                         <p class="project-info-data-stat">
@@ -309,19 +316,17 @@
                                             ></i>
 
                                             <span
+                                                th:text="${repo.licenseLabel} ?: 'No license'"
                                                 class="project-info-data-stat-value"
-                                                >GPL-3.0 license</span
-                                            >
+                                            ></span>
                                         </p>
                                     </div>
                                 </div>
 
-                                <p class="project-info-description">
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Quasi nesciunt quod ut
-                                    dolorum, necessitatibus sequi placeat
-                                    eligendi commodi soluta magnam.
-                                </p>
+                                <p
+                                    th:text="${repo.description} ?: 'No description.'"
+                                    class="project-info-description"
+                                ></p>
                             </div>
                         </a>
                     </div>
