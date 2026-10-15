@@ -10,6 +10,8 @@ import org.springframework.web.client.RestClient;
 @Service
 public class GithubService {
 
+    private static final int GITHUB_MAX_PER_PAGE = 100;
+
     private final RestClient client;
     private final String username;
     private final int max;
@@ -23,7 +25,7 @@ public class GithubService {
             .defaultHeader("Accept", "application/vnd.github+json")
             .build();
         this.username = username;
-        this.max = Math.min(max, 6);
+        this.max = Math.clamp(max, 1, GITHUB_MAX_PER_PAGE);
     }
 
     @Cacheable("repos")
@@ -37,6 +39,7 @@ public class GithubService {
             )
             .retrieve()
             .body(GithubRepo[].class);
+
         return repos == null ? List.of() : List.of(repos);
     }
 }

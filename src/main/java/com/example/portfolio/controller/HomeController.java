@@ -20,12 +20,15 @@ public class HomeController {
     @GetMapping("/")
     public String index(Model model) {
         List<GithubRepo> repos;
+
         try {
             repos = github.latestRepos();
         } catch (RestClientException e) {
             repos = List.of();
         }
+
         model.addAttribute("repos", repos);
+
         return "index";
     }
 }

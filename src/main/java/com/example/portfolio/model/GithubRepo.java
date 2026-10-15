@@ -25,6 +25,7 @@ public record GithubRepo(
 
     public String timeAgo() {
         Duration d = Duration.between(pushedAt, Instant.now());
+
         if (d.toSeconds() < 60) return Math.max(d.toSeconds(), 0) + "s";
         if (d.toMinutes() < 60) return d.toMinutes() + "m";
         if (d.toHours() < 24) return d.toHours() + "h";
