@@ -177,7 +177,6 @@ a {
     align-items: center;
 
     opacity: 0;
-    backdrop-filter: blur(8px);
 
     pointer-events: none;
 
@@ -535,16 +534,12 @@ main {
     align-items: center;
     justify-content: space-between;
 
-    background-color: color-mix(
-        in srgb,
-        var(--surface-container) 20%,
-        transparent
-    );
+    background-color: var(--surface-container);
     border-bottom: 1px solid var(--border);
-    backdrop-filter: blur(8px);
 
     position: sticky;
     top: 0;
+    z-index: 9998;
 
     padding: 0 32px;
 
@@ -1062,8 +1057,6 @@ main > section:not(:nth-of-type(1)) {
     .topbar {
         justify-content: center;
 
-        background-color: var(--surface-container);
-        backdrop-filter: none;
         border-top: 1px solid var(--border);
         border-bottom: 0;
 
@@ -1154,5 +1147,9 @@ main > section:not(:nth-of-type(1)) {
 
     .project-info-data-title {
         font-size: 1rem;
+    }
+
+    .project-info-data-stat {
+        font-size: 0.9rem;
     }
 }
