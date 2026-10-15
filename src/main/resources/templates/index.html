@@ -16,8 +16,24 @@
         <script th:src="@{/js/theme.js}" defer></script>
     </head>
     <body>
-        <!-- Inputs -->
-        <input type="checkbox" class="menu-toggle" id="menu-toggle" />
+        <!-- Curriculum -->
+        <input type="checkbox" id="curriculum-toggle" />
+
+        <section class="curriculum">
+            <header class="curriculum-header">
+                <h2 class="curriculum-header-title">Curriculum</h2>
+
+                <label for="curriculum-toggle" class="curriculum-header-close">
+                    <i class="fa-solid fa-xmark"></i>
+                </label>
+            </header>
+
+            <embed
+                th:src="@{/documents/test.pdf}"
+                type="application/pdf"
+                class="curriculum-viewer"
+            />
+        </section>
 
         <main>
             <!-- Hero -->
@@ -53,7 +69,9 @@
                     </a>
 
                     <div class="hero-button-wrapper">
-                        <a href="" class="hero-button">Portfolio</a>
+                        <label for="curriculum-toggle" class="hero-button"
+                            >Curriculum</label
+                        >
                     </div>
                 </div>
 
@@ -68,6 +86,7 @@
 
             <!-- Topbar -->
             <header class="topbar">
+                <!-- Topbar links -->
                 <nav class="topbar-link-wrapper">
                     <ul>
                         <li>
@@ -115,6 +134,7 @@
                 </nav>
 
                 <div class="topbar-tools">
+                    <!-- Topbar quick access -->
                     <div class="topbar-quick-access-wrapper">
                         <a
                             href="https://github.com/DimitryGonzales"
@@ -124,10 +144,16 @@
                             <i class="fa-brands fa-github"></i>
                         </a>
 
-                        <label for="" class="topbar-quick-access">
+                        <label
+                            for="curriculum-toggle"
+                            class="topbar-quick-access"
+                        >
                             <i class="fa-solid fa-file-lines"></i>
                         </label>
                     </div>
+
+                    <!-- Menu -->
+                    <input type="checkbox" id="menu-toggle" />
 
                     <label for="menu-toggle" class="menu-toggle-label">
                         <i class="fa-solid fa-gear"></i>
@@ -135,6 +161,7 @@
                     </label>
 
                     <div class="menu">
+                        <!-- Theme -->
                         <section class="menu-section">
                             <h3 class="menu-section-title">Theme</h3>
 
@@ -190,6 +217,7 @@
                             </ul>
                         </section>
 
+                        <!-- Language -->
                         <section class="menu-section">
                             <h3 class="menu-section-title">Language</h3>
 
@@ -231,12 +259,18 @@
             </header>
 
             <!-- About me -->
-            <section id="about-me"></section>
+            <section class="grid-section" id="about-me">
+                <div class="grid-section-content-wrapper">
+                    <h2 class="grid-section-content grid-section-title">
+                        About me
+                    </h2>
+                </div>
+            </section>
 
             <!-- Projects -->
             <section id="projects"></section>
 
-            <!-- Projects -->
+            <!-- Experiences -->
             <section id="experiences"></section>
 
             <!-- Contact me -->

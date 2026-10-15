@@ -15,12 +15,13 @@ function applyTheme() {
 }
 
 radios.forEach((radio) => {
-    radio.addEventListener("change", (e) => {
-        if (!e.target.checked) return;
+    radio.addEventListener("change", (event) => {
+        if (!event.target.checked) return;
 
-        const val = e.target.value;
-        if (val === "light" || val === "dark") {
-            localStorage.setItem("theme", val);
+        const value = event.target.value;
+
+        if (value === "light" || value === "dark") {
+            localStorage.setItem("theme", value);
         } else {
             localStorage.removeItem("theme");
         }
