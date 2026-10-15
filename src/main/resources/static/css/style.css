@@ -211,7 +211,7 @@ a {
 }
 
 .curriculum-header-title {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: bold;
 
     margin: 0 auto;
@@ -405,7 +405,7 @@ main {
 .hero-description {
     color: var(--subtext);
     font-family: "Inter";
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     text-align: center;
 }
 
@@ -824,7 +824,7 @@ main > section:not(:nth-of-type(1)) {
 }
 
 .grid-section-title {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: bold;
 
     padding: 16px 32px;
@@ -1018,10 +1018,18 @@ main > section:not(:nth-of-type(1)) {
         margin-bottom: var(--topbar-height);
     }
 
+    .curriculum-header-title {
+        font-size: 1rem;
+    }
+
     .curriculum-header-close {
         background-size: 100% 100%;
 
         color: var(--negative-text);
+    }
+
+    main > section:not(:nth-of-type(1)) {
+        scroll-margin-top: 0;
     }
 
     .hero-wrapper {
@@ -1037,7 +1045,7 @@ main > section:not(:nth-of-type(1)) {
     }
 
     .hero-description {
-        font-size: 1.1rem;
+        font-size: 1.25rem;
     }
 
     .scroll-indicator {
@@ -1097,8 +1105,16 @@ main > section:not(:nth-of-type(1)) {
         transform-origin: bottom center;
     }
 
+    .grid-section-title {
+        font-size: 1.25rem;
+    }
+
     .project {
         width: 100%;
+    }
+
+    .project-info-data-title {
+        font-size: 1rem;
     }
 }
 
@@ -1109,10 +1125,6 @@ main > section:not(:nth-of-type(1)) {
 
     .curriculum-header {
         padding: 0;
-    }
-
-    .curriculum-header-title {
-        font-size: 1.25rem;
     }
 
     .hero-avatar {
@@ -1133,20 +1145,12 @@ main > section:not(:nth-of-type(1)) {
         padding: 0 8px;
     }
 
-    .grid-section-title {
-        font-size: 1.5rem;
-    }
-
     .grid-section-button {
         gap: 8px;
 
         font-size: 1rem;
 
         padding: 16px 32px;
-    }
-
-    .project-info-data-title {
-        font-size: 1rem;
     }
 
     .project-info-data-stat {
