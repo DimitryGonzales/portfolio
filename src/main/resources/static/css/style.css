@@ -170,15 +170,6 @@ a {
     text-decoration: none;
 }
 
-.accent {
-    color: var(--accent);
-}
-
-.subtext {
-    color: var(--subtext);
-    font-family: "Inter";
-}
-
 /* Curriculum */
 .curriculum {
     display: flex;
@@ -408,6 +399,8 @@ main {
 }
 
 .hero-description {
+    color: var(--subtext);
+    font-family: "Inter";
     font-size: 1.25rem;
     text-align: center;
 }
@@ -443,8 +436,9 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-
     gap: 16px;
+
+    color: var(--subtext);
 
     position: sticky;
     bottom: 32px;
@@ -836,6 +830,52 @@ main > section:not(:nth-of-type(1)) {
     padding: 16px 32px;
 }
 
+.grid-section-button-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.grid-section-button {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    background-image: linear-gradient(var(--accent), var(--accent));
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    border-left: 1px solid var(--border);
+
+    font-size: 1.25rem;
+
+    padding: 32px 64px;
+
+    transition:
+        background 200ms ease,
+        color 200ms ease;
+}
+
+.grid-section-button:hover {
+    background-size: 100% 100%;
+
+    color: var(--accent-text);
+}
+
+.grid-section-button::after {
+    content: "\f054";
+
+    font-family: "Font Awesome 7 Free";
+    font-weight: 900;
+
+    transform: translateX(0);
+
+    transition: transform 200ms ease;
+}
+
+.grid-section-button:hover::after {
+    transform: translateX(16px);
+}
+
 /* Projects */
 .project-wrapper {
     display: flex;
@@ -874,9 +914,38 @@ main > section:not(:nth-of-type(1)) {
     width: 100%;
 }
 
-.project-info-title {
+.project-info-data {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.project-info-data-title {
     font-size: 1.25rem;
     font-weight: bold;
+}
+
+.project-info-data-stat-wrapper {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.project-info-data-stat {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.project-info-data-stat i {
+    color: var(--accent);
+}
+
+.project-info-description {
+    color: var(--subtext);
+    font-family: "Inter";
+    font-size: 0.9rem;
 }
 
 /* Media queries */
@@ -903,6 +972,20 @@ main > section:not(:nth-of-type(1)) {
         --grid-padding: 50px;
     }
 
+    body {
+        margin-bottom: var(--topbar-height);
+    }
+
+    .curriculum-header-close {
+        background-size: 100% 100%;
+
+        color: var(--negative-text);
+    }
+
+    .hero-wrapper {
+        border-bottom: 1px solid var(--border);
+    }
+
     .hero-avatar {
         max-width: 225px;
     }
@@ -917,6 +1000,8 @@ main > section:not(:nth-of-type(1)) {
 
     .scroll-indicator {
         flex-direction: column-reverse;
+
+        bottom: calc(var(--topbar-height) + 32px);
     }
 
     .scroll-indicator i:nth-of-type(1) {
@@ -925,56 +1010,6 @@ main > section:not(:nth-of-type(1)) {
 
     .scroll-indicator i:nth-of-type(2) {
         display: inline;
-    }
-
-    .topbar {
-        padding: 0 16px;
-    }
-
-    .topbar-quick-access-wrapper {
-        display: none;
-    }
-
-    .project {
-        width: 100%;
-    }
-}
-
-@media (width <= 640px) {
-    :root {
-        --grid-padding: 16px;
-    }
-
-    body {
-        margin-bottom: var(--topbar-height);
-    }
-
-    .curriculum-header {
-        padding: 0;
-    }
-
-    .curriculum-header-title {
-        font-size: 1.25rem;
-    }
-
-    .hero-wrapper {
-        border-bottom: 1px solid var(--border);
-    }
-
-    .hero-avatar {
-        max-width: 200px;
-    }
-
-    .hero-name {
-        font-size: 2rem;
-    }
-
-    .hero-description {
-        font-size: 1rem;
-    }
-
-    .scroll-indicator {
-        bottom: calc(var(--topbar-height) + 32px);
     }
 
     .topbar {
@@ -998,10 +1033,8 @@ main > section:not(:nth-of-type(1)) {
         border-left: 1px solid var(--border);
     }
 
-    .topbar-link {
-        font-size: 0.9rem;
-
-        padding: 0 8px;
+    .topbar-quick-access-wrapper {
+        display: none;
     }
 
     .menu-toggle-label {
@@ -1024,7 +1057,55 @@ main > section:not(:nth-of-type(1)) {
         transform-origin: bottom center;
     }
 
+    .project {
+        width: 100%;
+    }
+}
+
+@media (width <= 640px) {
+    :root {
+        --grid-padding: 16px;
+    }
+
+    .curriculum-header {
+        padding: 0;
+    }
+
+    .curriculum-header-title {
+        font-size: 1.25rem;
+    }
+
+    .hero-avatar {
+        max-width: 200px;
+    }
+
+    .hero-name {
+        font-size: 2rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .topbar-link {
+        font-size: 0.9rem;
+
+        padding: 0 8px;
+    }
+
     .grid-section-title {
         font-size: 1.5rem;
+    }
+
+    .grid-section-button {
+        gap: 8px;
+
+        font-size: 1rem;
+
+        padding: 16px 32px;
+    }
+
+    .project-info-data-title {
+        font-size: 1rem;
     }
 }
