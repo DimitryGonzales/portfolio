@@ -1068,6 +1068,55 @@ main > section:not(:nth-of-type(1)) {
     color: var(--accent-text);
 }
 
+.experience-wrapper {
+    list-style: none;
+
+    padding: 32px;
+}
+
+.experience {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    border-left: 2px solid var(--accent);
+
+    position: relative;
+
+    padding: 0 0 16px 16px;
+}
+
+.experience::before {
+    content: "";
+
+    background-color: var(--accent);
+    border-radius: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 10px;
+    aspect-ratio: 1/1;
+
+    transform: translateX(calc(-50% - 1px));
+}
+
+.experience-period {
+    color: var(--accent);
+    font-size: 0.9rem;
+}
+
+.experience-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.experience-description {
+    color: var(--subtext);
+    font-family: "Inter";
+}
+
 .contact-me-status {
     background-color: var(--surface-container-high);
     border: none;
@@ -1212,6 +1261,14 @@ main > section:not(:nth-of-type(1)) {
 
     .project-info-data-title {
         font-size: 1rem;
+    }
+
+    .experience-title {
+        font-size: 1rem;
+    }
+
+    .experience-description {
+        font-size: 0.9rem;
     }
 }
 
