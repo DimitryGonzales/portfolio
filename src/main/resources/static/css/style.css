@@ -794,6 +794,7 @@ main > section:not(:nth-of-type(1)) {
     width: 100%;
 }
 
+.grid-section:nth-child(1 of .grid-section)::before,
 .grid-section::after {
     content: "";
 
@@ -814,6 +815,10 @@ main > section:not(:nth-of-type(1)) {
     padding: 0 var(--grid-padding);
 
     width: 100%;
+}
+
+.grid-section:nth-child(1 of .grid-section) > .grid-section-content-wrapper {
+    border-top: 1px solid var(--border);
 }
 
 .grid-section-content-wrapper .grid-section-content-wrapper {
@@ -1118,6 +1123,8 @@ main > section:not(:nth-of-type(1)) {
 
     .hero-wrapper {
         border-bottom: 1px solid var(--border);
+
+        height: calc(100dvh - var(--topbar-height));
     }
 
     .hero-avatar {
@@ -1134,8 +1141,6 @@ main > section:not(:nth-of-type(1)) {
 
     .scroll-indicator {
         flex-direction: column-reverse;
-
-        bottom: calc(var(--topbar-height) + 32px);
     }
 
     .scroll-indicator i:nth-of-type(1) {

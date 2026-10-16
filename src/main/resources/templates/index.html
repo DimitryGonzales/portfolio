@@ -30,7 +30,7 @@
             </header>
 
             <embed
-                th:src="@{/documents/test.pdf}"
+                th:src="@{/documents/curriculum.pdf}"
                 type="application/pdf"
                 class="curriculum-viewer"
             />
@@ -251,16 +251,12 @@
                 </div>
             </header>
 
-            <!-- About me -->
-            <section class="grid-section" id="about-me">
+            <!-- Info -->
+            <section class="grid-section" id="info">
                 <div class="grid-section-content-wrapper">
                     <h2 class="grid-section-content grid-section-title">
-                        About me
+                        Info
                     </h2>
-                </div>
-
-                <div class="grid-section-content-wrapper">
-                    <div class="grid-section-content"></div>
                 </div>
             </section>
 
@@ -390,8 +386,8 @@
                                 <input
                                     type="text"
                                     name="name"
-                                    class="contact-me-name"
                                     maxlength="100"
+                                    class="contact-me-name"
                                     required
                                 />
 
@@ -399,8 +395,8 @@
 
                                 <textarea
                                     name="message"
-                                    class="contact-me-message"
                                     maxlength="2000"
+                                    class="contact-me-message"
                                     required
                                 ></textarea>
 
