@@ -794,7 +794,6 @@ main > section:not(:nth-of-type(1)) {
     width: 100%;
 }
 
-.grid-section:nth-child(1 of .grid-section)::before,
 .grid-section::after {
     content: "";
 
@@ -815,10 +814,6 @@ main > section:not(:nth-of-type(1)) {
     padding: 0 var(--grid-padding);
 
     width: 100%;
-}
-
-.grid-section:nth-child(1 of .grid-section) > .grid-section-content-wrapper {
-    border-top: 1px solid var(--border);
 }
 
 .grid-section-content-wrapper .grid-section-content-wrapper {
@@ -997,7 +992,57 @@ main > section:not(:nth-of-type(1)) {
     font-size: 0.9rem;
 }
 
-/* Contact */
+.experience-wrapper {
+    list-style: none;
+
+    padding: 32px;
+}
+
+/* Experiences */
+.experience {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    border-left: 2px solid var(--accent);
+
+    position: relative;
+
+    padding: 0 0 16px 16px;
+}
+
+.experience::before {
+    content: "";
+
+    background-color: var(--accent);
+    border-radius: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 10px;
+    aspect-ratio: 1/1;
+
+    transform: translateX(calc(-50% - 1px));
+}
+
+.experience-period {
+    color: var(--accent);
+    font-size: 0.9rem;
+}
+
+.experience-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.experience-description {
+    color: var(--subtext);
+    font-family: "Inter";
+}
+
+/* Contact me */
 .contact-me > *:not(:last-child) {
     border-bottom: 1px solid var(--border);
 }
@@ -1066,55 +1111,6 @@ main > section:not(:nth-of-type(1)) {
     background-size: 100% 100%;
 
     color: var(--accent-text);
-}
-
-.experience-wrapper {
-    list-style: none;
-
-    padding: 32px;
-}
-
-.experience {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-
-    border-left: 2px solid var(--accent);
-
-    position: relative;
-
-    padding: 0 0 16px 16px;
-}
-
-.experience::before {
-    content: "";
-
-    background-color: var(--accent);
-    border-radius: 100%;
-
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    height: 10px;
-    aspect-ratio: 1/1;
-
-    transform: translateX(calc(-50% - 1px));
-}
-
-.experience-period {
-    color: var(--accent);
-    font-size: 0.9rem;
-}
-
-.experience-title {
-    font-size: 1.25rem;
-    font-weight: bold;
-}
-
-.experience-description {
-    color: var(--subtext);
-    font-family: "Inter";
 }
 
 .contact-me-status {

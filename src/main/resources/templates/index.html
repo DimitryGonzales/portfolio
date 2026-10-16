@@ -12,6 +12,7 @@
         <link rel="stylesheet" th:href="@{/css/style.css}" />
 
         <!-- Scripts -->
+        <script th:src="@{/js/language.js}" defer></script>
         <script th:src="@{/js/theme.js}" defer></script>
         <script th:src="@{/js/sectionIndicator.js}" defer></script>
         <script th:src="@{/js/contact.js}" defer></script>
@@ -22,7 +23,9 @@
 
         <section class="curriculum">
             <header class="curriculum-header">
-                <h2 class="curriculum-header-title">Curriculum</h2>
+                <h2 class="curriculum-header-title" data-i18n="curriculum">
+                    Curriculum
+                </h2>
 
                 <label for="curriculum-toggle" class="curriculum-header-close">
                     <i class="fa-solid fa-xmark"></i>
@@ -55,21 +58,28 @@
                         <div class="hero-title">
                             <h1 class="hero-name">Dimitry Gonzales</h1>
 
-                            <p class="hero-description">
+                            <p
+                                class="hero-description"
+                                data-i18n="hero-description"
+                            >
                                 Software engineering student
                             </p>
                         </div>
                     </a>
 
                     <div class="hero-button-wrapper">
-                        <label for="curriculum-toggle" class="hero-button"
-                            >Curriculum</label
+                        <label
+                            for="curriculum-toggle"
+                            class="hero-button"
+                            data-i18n="curriculum"
                         >
+                            Curriculum
+                        </label>
                     </div>
                 </div>
 
                 <a href="#info" class="scroll-indicator">
-                    <p>Scroll down</p>
+                    <p data-i18n="scroll-down">Scroll down</p>
 
                     <i class="fa-solid fa-computer-mouse"></i>
 
@@ -93,6 +103,7 @@
                                 href="#info"
                                 class="topbar-link"
                                 id="info-indicator"
+                                data-i18n="info"
                                 >Info</a
                             >
                         </li>
@@ -102,6 +113,7 @@
                                 href="#projects"
                                 class="topbar-link"
                                 id="projects-indicator"
+                                data-i18n="projects"
                                 >Projects</a
                             >
                         </li>
@@ -111,6 +123,7 @@
                                 href="#experiences"
                                 class="topbar-link"
                                 id="experiences-indicator"
+                                data-i18n="experiences"
                                 >Experiences</a
                             >
                         </li>
@@ -120,6 +133,7 @@
                                 href="#contact-me"
                                 class="topbar-link"
                                 id="contact-me-indicator"
+                                data-i18n="contact-me"
                                 >Contact me</a
                             >
                         </li>
@@ -156,7 +170,9 @@
                     <div class="menu">
                         <!-- Theme -->
                         <section class="menu-section">
-                            <h3 class="menu-section-title">Theme</h3>
+                            <h3 class="menu-section-title" data-i18n="theme">
+                                Theme
+                            </h3>
 
                             <ul class="menu-section-option-wrapper">
                                 <li>
@@ -172,6 +188,7 @@
                                     <label
                                         for="theme-auto"
                                         class="menu-section-option"
+                                        data-i18n="theme-auto"
                                         >Auto</label
                                     >
                                 </li>
@@ -188,6 +205,7 @@
                                     <label
                                         for="theme-light"
                                         class="menu-section-option"
+                                        data-i18n="theme-light"
                                         >Light</label
                                     >
                                 </li>
@@ -204,6 +222,7 @@
                                     <label
                                         for="theme-dark"
                                         class="menu-section-option"
+                                        data-i18n="theme-dark"
                                         >Dark</label
                                     >
                                 </li>
@@ -212,13 +231,16 @@
 
                         <!-- Language -->
                         <section class="menu-section">
-                            <h3 class="menu-section-title">Language</h3>
+                            <h3 class="menu-section-title" data-i18n="language">
+                                Language
+                            </h3>
 
                             <ul class="menu-section-option-wrapper">
                                 <li>
                                     <input
                                         type="radio"
                                         name="language-toggle"
+                                        value="english"
                                         class="menu-section-option-toggle"
                                         id="language-english"
                                         checked
@@ -235,6 +257,7 @@
                                     <input
                                         type="radio"
                                         name="language-toggle"
+                                        value="portuguese"
                                         class="menu-section-option-toggle"
                                         id="language-portuguese"
                                     />
@@ -254,7 +277,10 @@
             <!-- Info -->
             <section class="grid-section" id="info">
                 <div class="grid-section-content-wrapper">
-                    <h2 class="grid-section-content grid-section-title">
+                    <h2
+                        class="grid-section-content grid-section-title"
+                        data-i18n="info"
+                    >
                         Info
                     </h2>
                 </div>
@@ -263,7 +289,10 @@
             <!-- Projects -->
             <section class="grid-section" id="projects">
                 <div class="grid-section-content-wrapper">
-                    <h2 class="grid-section-content grid-section-title">
+                    <h2
+                        class="grid-section-content grid-section-title"
+                        data-i18n="projects"
+                    >
                         Projects
                     </h2>
                 </div>
@@ -342,6 +371,7 @@
                                 href="https://github.com/DimitryGonzales?tab=repositories"
                                 target="_blank"
                                 class="grid-section-button"
+                                data-i18n="see-more"
                             >
                                 See more
                             </a>
@@ -355,7 +385,10 @@
                 <div class="grid-section-content-wrapper">
                     <div class="grid-section-content">
                         <div class="grid-section-content-wrapper">
-                            <h2 class="grid-section-content grid-section-title">
+                            <h2
+                                class="grid-section-content grid-section-title"
+                                data-i18n="experiences"
+                            >
                                 Experiences
                             </h2>
                         </div>
@@ -367,7 +400,10 @@
                         <div class="grid-section-content-wrapper">
                             <ol class="grid-section-content experience-wrapper">
                                 <li class="experience">
-                                    <p class="experience-period">
+                                    <p
+                                        class="experience-period"
+                                        data-i18n="experience-period-puc"
+                                    >
                                         2026 - Ongoing
                                     </p>
 
@@ -376,7 +412,10 @@
                                             PUC Minas
                                         </h3>
 
-                                        <p class="experience-description">
+                                        <p
+                                            class="experience-description"
+                                            data-i18n="experience-description-puc"
+                                        >
                                             Bachelor’s Degree in Software
                                             Engineering
                                         </p>
@@ -393,7 +432,10 @@
                 <div class="grid-section-content-wrapper">
                     <div class="grid-section-content">
                         <div class="grid-section-content-wrapper">
-                            <h2 class="grid-section-content grid-section-title">
+                            <h2
+                                class="grid-section-content grid-section-title"
+                                data-i18n="contact-me"
+                            >
                                 Contact me
                             </h2>
                         </div>
@@ -410,7 +452,9 @@
                                 method="post"
                                 action="/contact"
                             >
-                                <h3 class="contact-me-title">Name</h3>
+                                <h3 class="contact-me-title" data-i18n="name">
+                                    Name
+                                </h3>
 
                                 <input
                                     type="text"
@@ -420,7 +464,12 @@
                                     required
                                 />
 
-                                <h3 class="contact-me-title">Message</h3>
+                                <h3
+                                    class="contact-me-title"
+                                    data-i18n="message"
+                                >
+                                    Message
+                                </h3>
 
                                 <textarea
                                     name="message"
@@ -429,7 +478,11 @@
                                     required
                                 ></textarea>
 
-                                <button class="contact-me-button" type="submit">
+                                <button
+                                    class="contact-me-button"
+                                    type="submit"
+                                    data-i18n="send"
+                                >
                                     Send
                                 </button>
                             </form>
